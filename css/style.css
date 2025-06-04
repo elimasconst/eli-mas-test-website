@@ -1,0 +1,11 @@
+/* Gallery image size */
+.project-gallery img {
+  width: 100%;
+  max-width: 300px; /* adjust this */
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+}
+
+/* You can add more styles here later */
