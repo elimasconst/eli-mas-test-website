@@ -7,5 +7,11 @@
   margin: auto;
   cursor: pointer;
 }
+.lb-prev, .lb-next {
+  opacity: 1 !important;
+  display: block !important;
+  background-color: rgba(0, 0, 0, 0.3); /* optional dark background */
+  border-radius: 4px;
+}
 
 /* You can add more styles here later */
