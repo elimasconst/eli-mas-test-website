@@ -12,28 +12,5 @@
   opacity: 1 !important;
   visibility: visible !important;
 }
-body {
-  background-color: #f5f7f9;  /* soft light cool gray-blue */
-  color: #333a44;             /* soft dark gray-blue */
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  margin: 0;
-  padding: 0 20px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #222933;             /* slightly darker headings */
-  font-weight: bold;
-}
-
-a {
-  color: #1a73e8;             /* calm medium blue links */
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
 
 /* You can add more styles here later */
