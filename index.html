@@ -49,24 +49,37 @@
   </footer>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="lightbox/js/lightbox.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+  <!-- Hammer.js for swipe support -->
+<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var lightboxOverlay = document.querySelector('.lightboxOverlay');
-    if (!lightboxOverlay) return;
+    // Only apply on mobile
+    if (window.innerWidth > 767) return;
 
-    var hammer = new Hammer(lightboxOverlay);
+    // Listen for when the lightbox is opened
+    document.addEventListener('click', function (e) {
+      if (e.target.matches('[data-lightbox]')) {
+        setTimeout(() => {
+          var lightboxOverlay = document.querySelector('.lightboxOverlay');
+          if (!lightboxOverlay) return;
 
-    hammer.on('swipeleft', function () {
-      var nextButton = document.querySelector('.lb-next');
-      if (nextButton) nextButton.click();
-    });
+          var hammer = new Hammer(lightboxOverlay);
 
-    hammer.on('swiperight', function () {
-      var prevButton = document.querySelector('.lb-prev');
-      if (prevButton) prevButton.click();
+          hammer.on('swipeleft', function () {
+            var nextButton = document.querySelector('.lb-next');
+            if (nextButton) nextButton.click();
+          });
+
+          hammer.on('swiperight', function () {
+            var prevButton = document.querySelector('.lb-prev');
+            if (prevButton) prevButton.click();
+          });
+        }, 100); // slight delay to allow overlay to render
+      }
     });
   });
+</script>
+
 </script>
 
 </body>
