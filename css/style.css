@@ -12,5 +12,12 @@
   opacity: 1 !important;
   visibility: visible !important;
 }
+/* Hide Lightbox arrows on screens smaller than 768px (typical mobile breakpoint) */
+@media (max-width: 767px) {
+  .lb-prev,
+  .lb-next {
+    display: none !important;
+  }
+}
 
 /* You can add more styles here later */
