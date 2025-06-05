@@ -7,12 +7,5 @@
   margin: auto;
   cursor: pointer;
 }
-/* Customize Lightbox popup image size */
-.lightbox-image {
-  max-width: 90vw !important;  /* 90% of viewport width */
-  max-height: 90vh !important; /* 90% of viewport height */
-  width: auto !important;      /* Let width scale naturally */
-  height: auto !important;     /* Let height scale naturally */
-}
 
 /* You can add more styles here later */
