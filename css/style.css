@@ -14,5 +14,13 @@
   width: auto !important;      /* Let width scale naturally */
   height: auto !important;     /* Let height scale naturally */
 }
+/* Force consistent max height in Lightbox popup, regardless of image shape */
+.lightbox .lb-image {
+  max-height: 80vh !important;
+  max-width: auto !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
 
 /* You can add more styles here later */
