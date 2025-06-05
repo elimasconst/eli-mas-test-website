@@ -1,3 +1,7 @@
+body {
+  background-color: lightgreen;
+}
+
 /* Gallery image size */
 .project-gallery img {
   width: 100%;
