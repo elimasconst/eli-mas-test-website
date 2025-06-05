@@ -1,5 +1,24 @@
 body {
-  background-color: lightgreen;
+  background-color: #f4f1ee;
+  color: #333333;
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3 {
+  color: #0b355d;
+}
+
+button, .button {
+  background-color: #d1495b;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover, .button:hover {
+  background-color: #b03c4a;
 }
 
 /* Gallery image size */
