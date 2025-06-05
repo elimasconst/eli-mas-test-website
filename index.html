@@ -53,23 +53,24 @@
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    if (window.innerWidth > 767) return; // Only on mobile
+    if (window.innerWidth > 767) return; // Mobile only
 
     const observer = new MutationObserver(() => {
       const overlay = document.querySelector('.lightboxOverlay');
-      if (!overlay || overlay.getAttribute('data-swipe-bound')) return;
+      const nextBtn = document.querySelector('.lb-next');
+      const prevBtn = document.querySelector('.lb-prev');
+
+      if (!overlay || !nextBtn || !prevBtn || overlay.getAttribute('data-swipe-bound')) return;
 
       overlay.setAttribute('data-swipe-bound', 'true');
       const hammer = new Hammer(overlay);
 
       hammer.on('swipeleft', function () {
-        const nextBtn = document.querySelector('.lb-next');
-        if (nextBtn) nextBtn.click();
+        nextBtn.click();
       });
 
       hammer.on('swiperight', function () {
-        const prevBtn = document.querySelector('.lb-prev');
-        if (prevBtn) prevBtn.click();
+        prevBtn.click();
       });
     });
 
