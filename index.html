@@ -49,28 +49,30 @@
   </footer>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="lightbox/js/lightbox.min.js"></script>
-  <!-- Hammer.js for swipe support -->
+<!-- Hammer.js for swipe support -->
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    if (window.innerWidth > 767) return; // Mobile only
+    if (window.innerWidth > 767) return; // Only run on mobile
 
     const observer = new MutationObserver(() => {
       const overlay = document.querySelector('.lightboxOverlay');
-      const nextBtn = document.querySelector('.lb-next');
-      const prevBtn = document.querySelector('.lb-prev');
+      const lightboxContent = document.querySelector('.lightbox'); // checks image+arrows
 
-      if (!overlay || !nextBtn || !prevBtn || overlay.getAttribute('data-swipe-bound')) return;
+      if (!overlay || !lightboxContent || overlay.getAttribute('data-swipe-bound')) return;
 
       overlay.setAttribute('data-swipe-bound', 'true');
+
       const hammer = new Hammer(overlay);
 
-      hammer.on('swipeleft', function () {
-        nextBtn.click();
+      hammer.on('swipeleft', () => {
+        const nextBtn = document.querySelector('.lb-next');
+        if (nextBtn) nextBtn.click();
       });
 
-      hammer.on('swiperight', function () {
-        prevBtn.click();
+      hammer.on('swiperight', () => {
+        const prevBtn = document.querySelector('.lb-prev');
+        if (prevBtn) prevBtn.click();
       });
     });
 
@@ -80,6 +82,7 @@
     });
   });
 </script>
+
 
 </body>
 </html>
