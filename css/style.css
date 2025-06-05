@@ -12,44 +12,5 @@
   opacity: 1 !important;
   visibility: visible !important;
 }
-body {
-  background-color: #fafafa;  /* light off-white, easy on eyes */
-  color: #222222;             /* dark charcoal text for good readability */
-  font-family: Arial, sans-serif; /* clean, professional font */
-  line-height: 1.5;
-  margin: 0;
-  padding: 0 20px;            /* some side padding */
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #111111;             /* slightly darker for headings */
-  font-weight: bold;
-}
-
-a {
-  color: #0056b3;             /* classic blue link color */
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Gallery image size */
-.project-gallery img {
-  width: 100%;
-  max-width: 300px; /* adjust this */
-  border-radius: 8px;
-  display: block;
-  margin: auto;
-  cursor: pointer;
-}
-
-/* Force Lightbox arrows to always show */
-.lb-prev, .lb-next {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
 
 /* You can add more styles here later */
