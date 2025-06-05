@@ -53,36 +53,22 @@
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    if (window.innerWidth > 767) return; // Only run on mobile
+    var lightboxOverlay = document.querySelector('.lightboxOverlay');
+    if (!lightboxOverlay) return;
 
-    const observer = new MutationObserver(() => {
-      const overlay = document.querySelector('.lightboxOverlay');
-      const lightboxContent = document.querySelector('.lightbox'); // checks image+arrows
+    var hammer = new Hammer(lightboxOverlay);
 
-      if (!overlay || !lightboxContent || overlay.getAttribute('data-swipe-bound')) return;
-
-      overlay.setAttribute('data-swipe-bound', 'true');
-
-      const hammer = new Hammer(overlay);
-
-      hammer.on('swipeleft', () => {
-        const nextBtn = document.querySelector('.lb-next');
-        if (nextBtn) nextBtn.click();
-      });
-
-      hammer.on('swiperight', () => {
-        const prevBtn = document.querySelector('.lb-prev');
-        if (prevBtn) prevBtn.click();
-      });
+    hammer.on('swipeleft', function () {
+      var nextButton = document.querySelector('.lb-next');
+      if (nextButton) nextButton.click();
     });
 
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
+    hammer.on('swiperight', function () {
+      var prevButton = document.querySelector('.lb-prev');
+      if (prevButton) prevButton.click();
     });
   });
 </script>
-
 
 </body>
 </html>
