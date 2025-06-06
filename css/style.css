@@ -35,5 +35,30 @@ button:hover, .button:hover {
   opacity: 1 !important;
   visibility: visible !important;
 }
+table {
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+td {
+  padding: 4px 12px 4px 0;
+  vertical-align: top;
+}
+section table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+section th {
+  text-align: left;
+  font-size: 1.2em;
+  padding-bottom: 10px;
+}
+
+section td {
+  padding: 4px 8px;
+}
 
 /* You can add more styles here later */
